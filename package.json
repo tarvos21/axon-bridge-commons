@@ -1,7 +1,9 @@
 {
   "name": "axon-bridge-commons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
+  "author": "Cryptape",
+  "license": "MIT",
   "scripts": {
     "clean": "rimraf lib",
     "build": "npm run build:js && npm run build:types",
