@@ -91,6 +91,21 @@ export class AxonApiHandler implements API.ForceBridgeAPIV1 {
     })();
   }
 
+  getTokenNameAndDecimals(
+    tokenAddress: string
+  ): Promise<API.getTokenNameAndDecimalsResponse> {
+    return (async () => {
+      let tokenContract = new ethers.Contract(
+        tokenAddress,
+        ERC20.abi,
+        this.provider
+      );
+      let name = await tokenContract.name();
+      let decimals = await tokenContract.decimals();
+      return { name, decimals };
+    })();
+  }
+
   getBridgeInNervosBridgeFee(
     payload: API.GetBridgeInNervosBridgeFeePayload
   ): Promise<API.GetBridgeInNervosBridgeFeeResponse> {

@@ -111,6 +111,11 @@ export interface getTokenAddressWhiteListResponse {
   tokenAddressWhitelist: string[];
 }
 
+export interface getTokenNameAndDecimalsResponse {
+  name: string;
+  decimals: number;
+}
+
 export interface GetBridgeInNervosBridgeFeePayload {
   network: string;
   xchainAssetIdent: string;
